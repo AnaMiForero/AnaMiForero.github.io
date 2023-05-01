@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AF</title>
+
+    <!-- link Font awesome cdn -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- link file CSS -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<a href="#top" class="button-up" id="boton-subir"> 
+    <i class="fa-solid fa-arrow-up"></i>
+</a>
+<article id="top" class="wrapper style1">
+    <div class="container-2">
+        <header>
+            <nav id="nav">
+                <a class="logo">AF</a>
+                <div class="nav-links">
+                    <span>Follow Me:</span>                    
+                    <a href="https://www.linkedin.com/in/amforero95/" target="_blank" style="--i:0;"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/AnaMiForero" target="_blank" style="--i:1;"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content-2">
+            <div class="hero-text">
+                <h1>Ana M. Forero</h1>
+                <span>Researcher</span>
+                <p> A <strong>physicist</strong> currently working in the world of <strong>cancer</strong> research <br> as a Ph.D. student at <a href="https://moffitt.org/education/research-education-and-training/office-of-graduate-affairs/phd-program/meet-our-students/" target="_blank"> Moffitt Cancer Center</a> and the </br> <a href="https://www.usf.edu" target="_blank"> University of South Florida</a>.</p>
+                <a href="#work" class="btn" onclick="scrollToSection('down')">Learn about what I do</a>
+            </div>
+            <div class="hero-img">
+                <img src="pic00.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</article>
+ <!-- Work -->
+<article id="work" class="wrapper style1">
+    <div class="container-2">
+        <header>
+            <h2>Here are all the stuff I do</h2>
+        </header>
+        <div class="content-3 row">
+            <div class="col-4">                
+                <div class="card" style="--i:2;">
+                    <div class="card-header my-card-header">
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0921452620305767?via%3Dihub" target="_blank"><img class="two" src="pic002.jpg"alt=""></a>
+                    </div>
+                    <div class="card-body">
+                        <b> Nanoscience </b> 
+                        <!-- <span>&#9883;</span> -->
+                    </div>
+                    <div class="card-footer">
+                        Computational modeling of semiconductor nanostructures behavior under external fields and their optical properties, using the Finite Element Method (FEM).
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">                
+                <div class="card" style="--i:3;">
+                    <div class="card-header">
+                        <a href="https://github.com/AnaMiForero/MathOnco" target="_blank"><img class="two" src="pic003.jpg" alt=""></a>     
+                    </div>                  
+                    <div class="card-body">
+                        <b> Cancer Biology </b>
+                     </div>
+                    <div class="card-footer">
+                        Mathematical and computational modeling of tumor growth, drug kinetics, and tumor-stroma interactions using Agent-based models (ABMs) and Evolutionary Game Theory.   
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">                
+                <div class="card" style="--i:4;">
+                    <div class="card-header">
+                        <a href="https://github.com/AnaMiForero/DataScience_USF" target="_blank"><img class="two" src="pic004.jpg" alt=""></a>
+                    </div>
+                    <div class="card-body">
+                        <b> Data Science </b>
+                    </div>
+                    <div class="card-footer">
+                        Learning Data Science to apply the knowledge in cancer research and to understand cancer cells' decision-making.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<script>
+    window.onscroll = function() {mostrarBotonSubir()};
+
+    var botonSubir = document.getElementById("boton-subir");
+
+    botonSubir.style.opacity= 0
+    function mostrarBotonSubir() {
+        if (document.documentElement.scrollTop < 300) {
+            botonSubir.style.opacity= 0
+        } else {
+            botonSubir.style.opacity=1
+        }
+        }
+
+        function subir() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+    function scrollToSection(section) {
+      var seccionDeseada = document.getElementById(section);
+      seccionDeseada.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+            } else {
+            reveals[i].classList.remove("active");
+            }
+        }
+    }
+    window.addEventListener("scroll", reveal);
+
+    // To check the scroll position on page load
+    reveal();
+    
+</script>
+
+</body>
+</html>
+
+
